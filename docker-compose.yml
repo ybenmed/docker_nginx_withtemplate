@@ -1,0 +1,8 @@
+nginx:
+  image: nginx:latest
+  volumes:
+    - "./files:/files"
+    - "./theme:/etc/nginx/html/betterlisting" 
+    - "./conf:/etc/nginx/conf.d"
+  ports:
+    - "8080:80"
