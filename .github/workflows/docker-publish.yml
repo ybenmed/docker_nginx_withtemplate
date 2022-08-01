@@ -7,11 +7,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: docker-compose up -d
-      - name: Publish Docker Image to GitHub Registry
-        uses: TilBlechschmidt/gp-docker-action@v0.2-alpha
-        with:
-          github-token: ${{ github.token }}
-
-          image-name: nginx
-
-          image-tag: latest
+      - name: Check running containers
+        run: docker ps
