@@ -25,8 +25,8 @@ jobs:
           # Container registry server url
           login-server: publihostcontainerregistry.azurecr.io
           run: |
-           docker build . -t contoso.azurecr.io/k8sdemo:${{ github.sha }}
-           docker push contoso.azurecr.io/k8sdemo:${{ github.sha }}
+           docker build . -t publihostcontainerregistry.azurecr.io/nginx:latest
+           docker push publihostcontainerregistry.azurecr.io/nginx:latest
     
     
     
