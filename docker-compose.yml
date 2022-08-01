@@ -1,5 +1,6 @@
 nginx:
   image: nginx:latest
+  container_name: webapp_nginx
   volumes:
     - "./files:/files"
     - "./theme:/etc/nginx/html/betterlisting" 
