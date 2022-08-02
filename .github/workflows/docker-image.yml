@@ -18,13 +18,12 @@ jobs:
       - uses: azure/docker-login@v1
         with:
           login-server: publihostcontainerregistry.azurecr.io
-          username: fedi.jaadari@ipein.u-carthage.tn 
-          password: 36B*etQxnf
+          username: publihostcontainerregistry
+          password: osKf+OyGGE=BvXbbQqW4Vox8xFxCVwZp
 
       - run: |
           docker build . -t publihostcontainerregistry.azurecr.io/nginx:1.0.0
           docker images
-          docker login publihostcontainerregistry.azurecr.io --username fedi.jaadari@ipein.u-carthage.tn --password-stdin
           docker push publihostcontainerregistry.azurecr.io/nginx:1.0.0
     
     
