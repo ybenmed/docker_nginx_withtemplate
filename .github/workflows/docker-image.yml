@@ -24,6 +24,7 @@ jobs:
       - run: |
           docker build . -t publihostcontainerregistry.azurecr.io/nginx:1.0.0
           docker images
+          docker login publihostcontainerregistry.azurecr.io -u 00000000-0000-0000-0000-000000000000 -p accessToken
           docker push publihostcontainerregistry.azurecr.io/nginx:1.0.0
     
     
