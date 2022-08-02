@@ -1,34 +1,29 @@
 name: Docker Image CI
 
+
 on:
   push:
-    branches: [ "master" ]
+    branches: [ master ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ master ]
+
+  workflow_dispatch:
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Azure Container Registry Login
-        uses: Azure/docker-login@v1
+      - uses: actions/checkout@v2
+      
+      - uses: azure/docker-login@v1
         with:
-          # Container registry username
-          username: fedi.jaadari@ipein.u-carthage.tn 
-          # Container registry password
-          password: 36B*etQxnf
-          # Container registry server url
           login-server: publihostcontainerregistry.azurecr.io
-          run: |
-           docker build . -t publihostcontainerregistry.azurecr.io/nginx:latest
-           docker push publihostcontainerregistry.azurecr.io/nginx:latest
-    
-    
+          username: fedi.jaadari@ipein.u-carthage.tn 
+          password: 36B*etQxnf
+
+      - run: |
+          docker build . -t publihostcontainerregistry.azurecr.io/nginx:1.0.0
+          docker push publihostcontainerregistry.azurecr.io/nginx:1.0.0
     
     
     
