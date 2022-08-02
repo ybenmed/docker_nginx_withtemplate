@@ -23,6 +23,7 @@ jobs:
 
       - run: |
           docker build . -t publihostcontainerregistry.azurecr.io/nginx:1.0.0
+          docker images
           docker push publihostcontainerregistry.azurecr.io/nginx:1.0.0
     
     
